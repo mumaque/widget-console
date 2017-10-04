@@ -94,7 +94,7 @@ cpdefine("inline:com-chilipeppr-widget-spconsole", ["chilipeppr_ready", "jqueryc
         fiddleurl: "(auto fill by runme.js)", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
         githuburl: "(auto fill by runme.js)", // The backing github repo
         testurl: "(auto fill by runme.js)",   // The standalone working widget so can view it working by itself
-        name: "Widget / Serial Port Console v1.7",
+        name: "Widget / Serial Port Console. v1.7",
         desc: "The Console widget lets you see the serial port log as well as send serial port commands into the selected serial port in the SPJS widget (the green one). There is a filter feature you can toggle in case your serial device sends large amounts of data that can overwhelm the user, but that you occasionally want to view by toggling the funnel. The console also lets you jump to previous commands using the up/down arrows in the input textbox.",
         foreignPublish: {
             '/com-chilipeppr-widget-serialport/send': "(High-level mode) When the user types a command, we send this signal so the serial port widget can pass the command along to the serial port server. This is the high-level send command that is used when in single port mode where we can ignore which serial port we are sending to and let the serial port widget figure it out. To get into this mode you must call init(true) to put this widget into singlePortMode. Optionally you can also call setSinglePortMode().",
@@ -465,9 +465,9 @@ cpdefine("inline:com-chilipeppr-widget-spconsole", ["chilipeppr_ready", "jqueryc
             this.portIsBound = true;
             var hdr = $('.com-chilipeppr-widget-spconsole .panel-heading .panel-title');
             if (this.portBoundTo)
-                hdr.html("Serial Port Console <span class=\"subtitle\">" + this.portBoundTo.Name + "</span>");
+                hdr.html("Serial Port Console. <span class=\"subtitle\">" + this.portBoundTo.Name + "</span>");
             else
-                hdr.html("Serial Port Console <span class=\"subtitle\">" + "No port" + "</span>");
+                hdr.html("Serial Port Console. <span class=\"subtitle\">" + "No port" + "</span>");
             
         },
         onPortList: function(ports) {
@@ -492,13 +492,13 @@ cpdefine("inline:com-chilipeppr-widget-spconsole", ["chilipeppr_ready", "jqueryc
             var hdr = $('.com-chilipeppr-widget-spconsole .panel-heading .panel-title');
             if (ctrPorts == 1) {
                 // we have a single port. good. this is easy
-                hdr.html("Serial Port Console <span class=\"subtitle\">" + this.portBoundTo.Name + "</span>");
+                hdr.html("Serial Port Console. <span class=\"subtitle\">" + this.portBoundTo.Name + "</span>");
             }
             else if (ctrPorts > 1) {
-                hdr.html("Serial Port Console <span class=\"subtitle\">" + this.portBoundTo.Name - " Multi</span>");
+                hdr.html("Serial Port Console. <span class=\"subtitle\">" + this.portBoundTo.Name - " Multi</span>");
             }
             else {
-                hdr.html("Serial Port Console <span class=\"subtitle\">" + "No port selected</span>");
+                hdr.html("Serial Port Console. <span class=\"subtitle\">" + "No port selected</span>");
             }
         },
         resizePtr: null,
